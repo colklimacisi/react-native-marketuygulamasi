@@ -7,7 +7,10 @@ import {
   DrawerItemList,
   DrawerItem,
 } from '@react-navigation/drawer';
-
+import AnaSayfa from '../Screen/AnaSayfa';
+import SupportScreen from '../Screen/SupportScreen';
+import KategoriItem from '../components/KategoriItem';
+import Kategoriler from '../Screen/SupportScreen';
 
 function Feed({ navigation }) {
   return (
@@ -17,59 +20,41 @@ function Feed({ navigation }) {
   );
 }
 
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications Screen</Text>
-    </View>
-  );
-}
 
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile Screen</Text>
-    </View>
-  );
-}
+
 
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator initialRouteName="Feed">
+    <Drawer.Navigator initialRouteName="SupportScreen">
       <Drawer.Screen
         name="Feed"
         text='fees'
-        component={Feed}
-        options={{ drawerLabel: 'Meyve,Sebze'}}
+        component={AnaSayfa}
+        options={{ drawerLabel: 'Feed,Sebze'}}
         
       />
       <Drawer.Screen
-        name="Notifications"
-        component={Feed}
+        name="SupportScreen"
+        component={SupportScreen}
         options={{ drawerLabel: 'Et,Balık' }}
       />
       <Drawer.Screen
-        name="aa"
-        component={Profile}
-        options={{ drawerLabel: 'Süt,Kahvaltılık' }}
+        name="KategoriItem"
+        component={KategoriItem}
+        options={{ drawerLabel: 'Et,Balık' }}
       />
       <Drawer.Screen
-        name="3"
-        component={Profile}
-        options={{ drawerLabel: 'İçecek' }}
-      />
-      <Drawer.Screen
-        name="4"
-        component={Profile}
-        options={{ drawerLabel: 'asdasda' }}
+        name="Kategoriler"
+        component={Kategoriler}
+        options={{ drawerLabel: 'Et,Balık' }}
       />
     </Drawer.Navigator>
   );
 }
 
-export function DrawerNavigation(props) {
+export default function DrawerNavigation(props) {
   return (
     
       <MyDrawer />

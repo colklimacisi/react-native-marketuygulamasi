@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row-reverse',
     flexWrap: 'nowrap',
   },
-  button: { flex: 1, width: '%90', alignSelf: 'center', color: '#FFFFF3' },
+  button: { flex: 1, alignSelf: 'center', color: '#FFFFF3' },
   
   DrawerNavigationText: {
     flex: 1,

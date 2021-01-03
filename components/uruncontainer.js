@@ -12,6 +12,12 @@ export default function UrunContainer() {
         <ScrollView horizontal={true}>
           <Urun style={styles.item} />
           <Urun style={styles.item} />
+           <Urun style={styles.item} />
+          <Urun style={styles.item} />
+          <Urun style={styles.item} />
+          <Urun style={styles.item} />
+          <Urun style={styles.item} />
+          <Urun style={styles.item} />
         
         </ScrollView>
       </View>

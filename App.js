@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React ,{useEffect,useState}from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import DrawerNavigation from './navigation/DrawerNavigation'
+import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './navigation/BottomTabNavigator'
-import Stacknavigator from './navigation/StackNavigator'
-import Kategoriler from './Screen/Kategoriler'
+import KategoriItem from './components/KategoriItem'
+import SupportScreen from './Screen/SupportScreen'
+import {Kategoriler }from './Screen/Kategoriler'
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as firebase from "firebase";
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const firebaseConfig = {
   apiKey: "AIzaSyCz5g9KK1_CNTZFfO6M8iDe8J7o21Y825o",
@@ -38,13 +41,22 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={props=> <Kategoriler{...props} />}initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Stacknavigator} />
-        <Drawer.Screen name="Notifications" component={DrawerNavigation} />
+      <Drawer.Navigator drawerContent={props => <Kategoriler {...props} />} initialRouteName="Home">
+        <Drawer.Screen name="Home" component={BottomTabNavigator} />
+        <Drawer.Screen name="Root" component={Root} />
+       
+        
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
 
-
+function Root() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="KategoriItem" component={KategoriItem} />
+      <Stack.Screen name="SupportScreen" component={SupportScreen} />
+    </Stack.Navigator>
+  );
+}
   
