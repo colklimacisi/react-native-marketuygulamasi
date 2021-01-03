@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Button,TouchableOpacity,TextInput,Alert} from 'react-native'
+import {View,Text,Button,TextInput,Alert} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { styles } from '../utils/color';
 

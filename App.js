@@ -1,6 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import React ,{useEffect,useState}from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './navigation/BottomTabNavigator'
@@ -9,6 +7,8 @@ import SupportScreen from './Screen/SupportScreen'
 import {Kategoriler }from './Screen/Kategoriler'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as firebase from "firebase";
+import StackNavigator from './navigation/StackNavigator'
+import { LogBox } from 'react-native';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const firebaseConfig = {
@@ -25,6 +25,8 @@ const firebaseConfig = {
   
   
 export default function App() {
+  
+  LogBox.ignoreAllLogs()
   const [initializing, setInitializing] = useState(true);
     const [user, setUser] = useState();
   
@@ -42,7 +44,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator drawerContent={props => <Kategoriler {...props} />} initialRouteName="Home">
-        <Drawer.Screen name="Home" component={BottomTabNavigator} />
+      <Drawer.Screen name="Home" component={StackNavigator} />
+        <Drawer.Screen name="QQQ" component={BottomTabNavigator} />
         <Drawer.Screen name="Root" component={Root} />
        
         

@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { styles } from '../utils/color';
 import Icon from 'react-native-vector-icons/FontAwesome'
 

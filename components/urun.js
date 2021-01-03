@@ -1,8 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Image} from 'react-native';
 import {styles} from '../utils/color'
-import Buton from './Buton'
-import PushNotification from '../components/PushNotification'
+import PushNotification from './PushNotification'
 export default function Urun(){
  
   return(

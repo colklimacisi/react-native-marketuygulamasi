@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import {View,Text,StyleSheet} from 'react-native';
-import{DrawerContentScrollView,DrawerItem}
+import React from 'react';
+import {View} from 'react-native';
+import{DrawerContentScrollView}
 from '@react-navigation/drawer'
 import { Drawer } from 'react-native-paper';
-import { styles } from '../utils/color';
-import Icon from 'react-native-vector-icons/FontAwesome'
 import KategoriItem from '../components/KategoriItem'
 export function Kategoriler(props){
 
@@ -12,7 +10,6 @@ export function Kategoriler(props){
       <View style={{flex:1}}>
           <DrawerContentScrollView {...props}>
           <Drawer.Section>
-              <KategoriItem {...props}text={'nasdas'}/>
               <KategoriItem {...props}text={'Meyve,Sebze'}/>
               <KategoriItem {...props}text={'Süt,Kahvaltılık'}/>
               <KategoriItem {...props}text={'Gıda,Şekerleme'}/>

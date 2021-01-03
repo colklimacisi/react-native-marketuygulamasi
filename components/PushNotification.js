@@ -39,7 +39,7 @@ export default function PushNotification ()
     }, []);
   
     return (
-      <TouchableHighlight onPress={async () => {
+      <TouchableHighlight style={{backgroundColor:'gray'}} onPress={async () => {
         await schedulePushNotification();
       }}>
         <View >
